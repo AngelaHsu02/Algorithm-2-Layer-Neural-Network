@@ -9,7 +9,7 @@
   - Input nodes：3x32x2=3072（對應CIFAR-10圖片展平後的維度）
   - Hidden nodes：1000
   - Output nodes：10（對應CIFAR-10的類別數）
-  - 
+
 - **數據預處理與增強：**
   - 隨機水平翻轉：`transforms.RandomHorizontalFlip()`
   - 隨機裁剪：`transforms.RandomCrop(32, padding=4)`
@@ -40,3 +40,8 @@
 - 學習率調度對模型收斂和最終性能有積極作用，餘弦退火學習率調度在本實驗中提升了模型的準確率。
 
 ## 實驗方法與小結2 - Stop Criteria比較
+- 比較stopping criteria: weight tuning Epoch Bound(EB), Learning Goal(LG), EB&LG，設定EB = 10, LG = epsilon < 1.50，LG, EB&LG迭代到第8次，因為minibatch average train loss < epsilon停止調整權重。
+- 可做調整: 降低epsilon，因為EB設計是因為當LG無法收斂到假設epsilon，才使用EB做停止標準，所以LG, EB&LG降低epsilon有機會accuracy更高。
+
+![image](https://github.com/AngelaHsu02/Algorithm-2-Layer-Neural-Network/assets/128824007/f8e23e6a-355d-4a20-8142-5371c1d53f6f)
+
