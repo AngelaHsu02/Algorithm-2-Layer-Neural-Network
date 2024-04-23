@@ -1,5 +1,18 @@
 ## 目標
 本專案的目標是使用PyTorch框架，在CIFAR-10資料集上構建並訓練一個兩層神經網路，以解決圖像分類問題。專案的重點在於探索不同的超參數設置：權重初始化方法、優化器選擇以及資料增強技術對模型性能的影響，旨在提高分類準確率。
+## 定義問題
+- **網絡架構：**
+  - 分類問題   
+  - X is a real number and has 3*32*32=3072 values.
+  - Y is a real number and has 1 value.
+  - 
+
+- **網絡架構：**
+  - Input nodes：3*32*32=3072（對應CIFAR-10圖片展平後的維度）
+  - Hidden nodes：1000
+  - Output nodes：10（對應CIFAR-10的類別數）
+
+
 ## 方法
 
 ![image](https://github.com/AngelaHsu02/Algorithm-2-Layer-Neural-Network/assets/128824007/faedb0d0-5f81-4a70-b79a-9b97c69a881a)
@@ -10,11 +23,6 @@
   - 隨機水平翻轉：`transforms.RandomHorizontalFlip()`
   - 隨機裁剪：`transforms.RandomCrop(32, padding=4)`
   - 標準化：`transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))`
-
-- **網絡架構：**
-  - 輸入層維度：3072（對應CIFAR-10圖片展平後的維度）
-  - 隱藏層節點數：1000
-  - 輸出層維度：10（對應CIFAR-10的類別數）
 
 - **權重初始化：**
   - Kaiming 均勻初始化：使用`nn.init.kaiming_uniform_`
