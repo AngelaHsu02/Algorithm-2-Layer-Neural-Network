@@ -7,7 +7,7 @@
   - Y is a real number and has 1 value.
 ## 實驗方法1 - 最佳的超參數設定
 - **網絡架構：**
-  - Input nodes：3x32x2=3072（對應CIFAR-10圖片展平後的維度）
+  - Input nodes：3x32x32=3072（對應CIFAR-10圖片展平後的維度）
   - Hidden nodes：1000
   - Output nodes：10（對應CIFAR-10的類別數）
 
@@ -48,6 +48,11 @@
 ![image](https://github.com/AngelaHsu02/Algorithm-2-Layer-Neural-Network/assets/128824007/93956222-56c3-43ac-9386-d0064e5af30a)
 - 比較stopping criteria: EB, LG, EBorLG, LGorUA, EBorLGorUA
 - 可發現**有UA**vs**無UA**分群效果：UA作為停止條件者，因為weight adjustment使loss下降較快。
+
+## 實驗方法與小結3 - Node pruning比較 
+![image](https://github.com/AngelaHsu02/Algorithm-2-Layer-Neural-Network/assets/128824007/0f0c8fc9-4cfd-4b31-b606-7a5e7b04de10)
+- 比較node pruning方法: prune irrelevant hidden nodes, potentially irrelavant, randomly choosen or mini weight.
+- 結果驗證node pruning表現less overfitting.
 
 
 
