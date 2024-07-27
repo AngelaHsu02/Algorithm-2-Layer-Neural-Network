@@ -1,5 +1,6 @@
 ## 目標
-本專案的目標是使用PyTorch框架，在CIFAR-10資料集上構建並訓練一個兩層神經網路，以解決圖像分類問題。專案的重點在於探索不同的超參數設置：權重初始化方法、優化器選擇以及資料增強技術對模型性能的影響，旨在提高分類準確率。
+本專案的目標是使用PyTorch框架，在CIFAR-10資料集上構建並訓練一個兩層神經網路，以解決圖像分類問題。使用WCN (Weight-tuning, Cramming, Network-tuning)演算法模組調整模型學習過程，以增加分類準確率。
+
 ## 定義問題
   - 分類問題
   - X is a real number and has 3x32x32=3072 values(input nodes).
